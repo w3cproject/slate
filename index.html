@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Zuzan Python API</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,12 +209,12 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <div class="logo-container">
+        <img src="images/logo.png" class="logo" alt="Logo" />
+      </div>
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,22 +222,102 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#overview" class="toc-h1 toc-link" data-title="Overview">Overview</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#python-requirements" class="toc-h2 toc-link" data-title="Python requirements">Python requirements</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="Logout">Logout</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#register" class="toc-h2 toc-link" data-title="Register">Register</a>
+                  </li>
+                  <li>
+                    <a href="#refresh-token" class="toc-h2 toc-link" data-title="Refresh token">Refresh token</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-by-token" class="toc-h2 toc-link" data-title="Get User By Token">Get User By Token</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-users" class="toc-h2 toc-link" data-title="Get All Users">Get All Users</a>
+                  </li>
+                  <li>
+                    <a href="#update-users" class="toc-h2 toc-link" data-title="Update Users">Update Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-by-id" class="toc-h2 toc-link" data-title="Get User By Id">Get User By Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-events" class="toc-h2 toc-link" data-title="Get User Events">Get User Events</a>
+                  </li>
+                  <li>
+                    <a href="#get-user-bookings" class="toc-h2 toc-link" data-title="Get User Bookings">Get User Bookings</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#events" class="toc-h1 toc-link" data-title="Events">Events</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-events" class="toc-h2 toc-link" data-title="Get All Events">Get All Events</a>
+                  </li>
+                  <li>
+                    <a href="#create-event" class="toc-h2 toc-link" data-title="Create Event">Create Event</a>
+                  </li>
+                  <li>
+                    <a href="#update-event" class="toc-h2 toc-link" data-title="Update Event">Update Event</a>
+                  </li>
+                  <li>
+                    <a href="#delete-event" class="toc-h2 toc-link" data-title="Delete Event">Delete Event</a>
+                  </li>
+                  <li>
+                    <a href="#get-event-by-id" class="toc-h2 toc-link" data-title="Get Event By Id">Get Event By Id</a>
+                  </li>
+                  <li>
+                    <a href="#is-booked-by-user" class="toc-h2 toc-link" data-title="Is Booked By User">Is Booked By User</a>
+                  </li>
+                  <li>
+                    <a href="#get-event-bookings" class="toc-h2 toc-link" data-title="Get Event Bookings">Get Event Bookings</a>
+                  </li>
+                  <li>
+                    <a href="#book-event-as-user" class="toc-h2 toc-link" data-title="Book Event As User">Book Event As User</a>
+                  </li>
+                  <li>
+                    <a href="#get-event-tickets" class="toc-h2 toc-link" data-title="Get Event Tickets">Get Event Tickets</a>
+                  </li>
+                  <li>
+                    <a href="#search-ev-ent-by-title" class="toc-h2 toc-link" data-title="Search Ev/ent By Title">Search Ev/ent By Title</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#categories" class="toc-h1 toc-link" data-title="Categories">Categories</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-categories" class="toc-h2 toc-link" data-title="Get All Categories">Get All Categories</a>
+                  </li>
+                  <li>
+                    <a href="#create-category" class="toc-h2 toc-link" data-title="Create Category">Create Category</a>
+                  </li>
+                  <li>
+                    <a href="#get-category-by-id" class="toc-h2 toc-link" data-title="Get Category By Id">Get Category By Id</a>
+                  </li>
+                  <li>
+                    <a href="#update-category" class="toc-h2 toc-link" data-title="Update Category">Update Category</a>
                   </li>
               </ul>
           </li>
@@ -246,198 +326,630 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href="https://zuzan.com" target="_blank">Zuzan</a></li>
+            <li><a href="https://online.zuzan.com" target="_blank">Zuzan Online</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='overview'>Overview</h1>
+<blockquote>
+<p>BASE URL: <a href="https://api.zuzan.pro/v1">https://api.zuzan.pro/v1</a></p>
+</blockquote>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Welcome to the <strong>Zuzan REST API</strong> comrad!</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>This is base API for all <strong>zuzan</strong> resources based on <strong>python</strong>.</p>
+
+<p>We have language bindings in <strong>Shell, Python</strong>! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h2 id='python-requirements'>Python requirements</h2>
+<p><strong>Version:</strong> <code>&gt;=3.5.3</code></p>
+
+<p><strong>JWT library:</strong> <a href="https://flask-jwt-extended.readthedocs.io/en/stable/">Flask JWT</a></p>
+
+<p><strong>API Framework:</strong> <a href="https://flask-restful.readthedocs.io/en/latest/">Flask-RESTful</a></p>
+
+<p><strong>Server:</strong> <a href="https://gunicorn.org/">Gunicorn</a></p>
+
+<p><strong>DataBase:</strong> <a href="#">MySQL</a></p>
 <h1 id='authentication'>Authentication</h1>
+<p>Zuzan uses <code>JSON Web Token Authentication</code> to allow access to the API.</p>
+
+<p>Before send any request, you must be authorized with your personal <code>email</code> and <code>password</code></p>
+
+<p>Zuzan expects for the <code>token</code> to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: Bearer ${ACCESS_TOKEN}</code></p>
+
+<aside class="notice">
+You must replace <code>${ACCESS_TOKEN}</code> with your `token`.
+</aside>
+<h2 id='login'>Login</h2>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make sure to replace `test` with your login and password.</span>
+curl -X POST <span class="s2">"https://api.zuzan.pro/v1/auth/login"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"email":"test","password":"test"}'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">zuzanApi</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">zuzanApi</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${ACCESS_TOKEN}"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${REFRESH_TOKEN}"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/auth/login</code>
+</div>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>email</td>
+<td>string</td>
+<td>yes</td>
+<td>User email</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>password</td>
+<td>string</td>
+<td>yes</td>
+<td>User password</td>
 </tr>
 </tbody></table>
+<h2 id='logout'>Logout</h2>
+<blockquote>
+<p>To logout, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make sure to replace `${ACCESS_TOKEN}` with your user `access_token`.</span>
+curl -X DELETE <span class="s2">"https://api.zuzan.pro/v1/auth/logout"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">zuzanApi</span>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">zuzanApi</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully logged out"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<div class="method-section delete">
+  <span class="method delete">DELETE</span>
+  <code>/auth/logout</code>
+</div>
+<h3 id='description'>Description</h3>
+<p>Deleting information about user auth from cookies</p>
+<h2 id='register'>Register</h2>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make sure to replace `test` with your login and password.</span>
+curl -X POST <span class="s2">"https://api.zuzan.pro/v1/auth/register"</span> <span class="se">\</span>
+  -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"username":"test", "phone":"test", "password":"test"}'</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">zuzanApi</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">zuzanApi</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${ACCESS_TOKEN}"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${REFRESH_TOKEN}"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/auth/register</code>
+</div>
+<h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>email</td>
+<td>string</td>
+<td>yes</td>
+<td>User email</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>no</td>
+<td>User phone</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>yes</td>
+<td>User password</td>
 </tr>
 </tbody></table>
+<h2 id='refresh-token'>Refresh token</h2>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make sure to replace `${REFRESH_TOKEN}` with your `refresh_token`.</span>
+curl -X POST <span class="s2">"https://api.zuzan.pro/v1/auth/refresh"</span>
+  -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">REFRESH_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">zuzanApi</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">zuzanApi</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"access_token"</span><span class="p">:</span><span class="s2">"${ACCESS_TOKEN}"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/auth/refresh</code>
+</div>
+<h3 id='description-2'>Description</h3>
+<p>Create new QR Code</p>
+<h2 id='get-user-by-token'>Get User By Token</h2>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make sure to replace `${ACCESS_TOKEN}` with your user `access_token`.</span>
+curl -X GET <span class="s2">"https://api.zuzan.pro/v1/auth/user"</span>
+  -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">zuzanApi</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">zuzanApi</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"token"</span><span class="p">:</span><span class="s2">"${ACCESS_TOKEN}"</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/auth/user</code>
+</div>
+<h3 id='description-3'>Description</h3>
+<p>Create new QR Code</p>
+<h1 id='users'>Users</h1>
+<p>Table Name: <strong>user</strong></p>
+<h2 id='get-all-users'>Get All Users</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/users"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/users</code>
+</div>
+<h2 id='update-users'>Update Users</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://api.zuzan.pro/v1/users/{user_id}"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User {} updates successfully"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<div class="method-section put">
+  <span class="method put">PUT</span>
+  <code>/users/{user_id}</code>
+</div>
+<h2 id='get-user-by-id'>Get User By Id</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/users/{user_id}"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/users/{user_id}</code>
+</div>
+<h2 id='get-user-events'>Get User Events</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/users/{user_id}/events"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/users/{user_id}/events</code>
+</div>
+<h2 id='get-user-bookings'>Get User Bookings</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/users/{user_id}/bookings"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/users/{user_id}/bookings</code>
+</div>
+<h1 id='events'>Events</h1>
+<p>Table Name: <strong>event</strong></p>
+<h2 id='get-all-events'>Get All Events</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/events</code>
+</div>
+<h2 id='create-event'>Create Event</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.zuzan.pro/v1/events"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event {} successfully created"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"previewPicturePath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amazon s3 url"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/events</code>
+</div>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Length</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>yes</td>
+<td>255</td>
+<td>Search string</td>
+</tr>
+</tbody></table>
+<h2 id='update-event'>Update Event</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event {} successfully updated"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"eventId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<div class="method-section put">
+  <span class="method put">PUT</span>
+  <code>/events/{event_id}</code>
+</div>
+<h2 id='delete-event'>Delete Event</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event successful deleted"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<div class="method-section delete">
+  <span class="method delete">DELETE</span>
+  <code>/events/{event_id}</code>
+</div>
+<h2 id='get-event-by-id'>Get Event By Id</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/events/{event_id}</code>
+</div>
+<h2 id='is-booked-by-user'>Is Booked By User</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}/isbooked"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="s2">"ticket_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"link_url"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/events/{event_id}/isbooked</code>
+</div>
+<h2 id='get-event-bookings'>Get Event Bookings</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}/bookings"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"bookings"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/events/{event_id}/bookings</code>
+</div>
+<h2 id='book-event-as-user'>Book Event As User</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}/book"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event {}, successfully booked with user {}"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/events/{event_id}/book</code>
+</div>
+<h2 id='get-event-tickets'>Get Event Tickets</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}/tickets"</span> <span class="se">\</span>
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+</span><span class="s2">"tickets"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/events/{event_id}/tickets</code>
+</div>
+<h2 id='search-ev-ent-by-title'>Search Ev/ent By Title</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/events/{event_id}/search?query=eventTitle"</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/events/{event_id}/search?query=eventTitle</code>
+</div>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>string</td>
+<td>yes</td>
+<td>Search string</td>
+</tr>
+</tbody></table>
+<h1 id='categories'>Categories</h1>
+<p>Table Name: <strong>user</strong></p>
+<h2 id='get-all-categories'>Get All Categories</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/categories"</span> / 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{}],</span><span class="w">
+</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/categories</code>
+</div>
+<h2 id='create-category'>Create Category</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://api.zuzan.pro/v1/categories"</span> / 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Category {} was created"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title-slug"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<div class="method-section post">
+  <span class="method post">POST</span>
+  <code>/categories</code>
+</div>
+<h2 id='get-category-by-id'>Get Category By Id</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X GET <span class="s2">"https://api.zuzan.pro/v1/categories/{category_id}"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<div class="method-section get">
+  <span class="method get">GET</span>
+  <code>/categories/{category_id}</code>
+</div>
+<h2 id='update-category'>Update Category</h2><pre class="highlight python tab-python"><code><span class="n">require</span> <span class="s">'zuzanApi'</span><span class="p">;</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">ZuzanApi</span><span class="p">::</span><span class="n">APIClient</span><span class="o">.</span><span class="n">authorize</span><span class="err">!</span><span class="p">(</span><span class="err">$</span><span class="p">{</span><span class="n">ACCESS_TOKEN</span><span class="p">});</span>
+<span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">get</span><span class="p">;</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"https://api.zuzan.pro/v1/categories/{category_id}"</span> 
+    -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">ACCESS_TOKEN</span><span class="k">}</span><span class="s2">"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<div class="method-section put">
+  <span class="method put">PUT</span>
+  <code>/categories/{category_id}</code>
+</div>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The ZuzanApi API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -451,19 +963,23 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Unauthorized -- Bad credentials, please verify that your username/password are correctly set.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- Your token is invalid, please login again to get a new one.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- Missing token.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified object could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a object with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
@@ -471,7 +987,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The object requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -479,7 +995,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many requests! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -495,9 +1011,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
